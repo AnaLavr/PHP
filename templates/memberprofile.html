@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Люди помогают людям</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/5ecd7d043c.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <!--<a class="navbar-item" href=""> add link to the main page -->
+            <img src="{{url_for('static', filename='logo_rus.png')}}" height="200" width ="200" >
+          <!--</a> -->
+      
+         <!--- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>-->
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+           
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="{{url_for('switch')}}" class="button is-grey  is-rounded ">
+                  <strong>Настройки</strong>
+                </a>
+                <a href="{{url_for('logout')}}" class="button is-grey  is-rounded ">
+                  <strong>Выйти</strong>
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div  style = "position:relative; left:30%; top:150px;">
+        <div style="float: left; width:140;">
+          <figure class="image is-128x128" >
+            <img src="{{url_for('static', filename="blank-profile-picture-973460_1280.png")}}" >
+          </figure>
+          <div class="box">
+            {% for name in names%}
+            <p>{{name['first_name']}}</p>
+            <p>{{name['city']}}</p>
+            <p>{{name['age']}}</p>
+            <p>{{name['mode_rus']}}</p>
+            <p>{{name['raiting']}}</p>
+          {%endfor%}
+          </div>
+
+          {% for name in names%}
+          {%if name['mode']== 'helpee'%}   
+          <a href="{{url_for('needhelp')}}"><button class="button is-danger">Мне нужна помощь</button></a>
+
+          {%endif%}
+          {% endfor%}
+          </div>
+          <div style="float:left; " >
+         <button class="button is-medium is-fullwidth" style="margin-left:40%;">
+           <a href="{{url_for('feed')}}">Создать публикацию</button></a>
+          <button class="button is-medium is-fullwidth" style="margin-left:40%;">Лента объявлений</button>
+          <button class="button  is-medium is-fullwidth" style="margin-left:40%;"><a href="{{url_for ('inbox',ID=ID)}}">Сообщения</a></button>
+      </div>
+    </div>
+      
+      </body>
+  </body>
+</html>

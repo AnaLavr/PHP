@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,26 +10,17 @@
   <body>
       <img src="{{url_for('static', filename="logo_rus.png")}}" style=" margin-left: 30%;">
      
-
-    <form action="{{url_for('helpee')}}" method="post" >    <!--need the same for helper-->
-        
-        <div class="field">
-            <label class="label">Логин</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="e.g ivanov">
-            </div>
-          </div>
-          
-          <div class="field">
-            <label class="label">Пароль</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="******">
-            </div>
-          </div>
-
-        <input type="submit" value="Подтвердить">
- </form>
+      <form method="POST" action ="{{url_for('member') }}"> <!--url for member, where to put ID-->
+      <table style="position:relative; margin-left:45%;">
+        {%for field in form%}
+        <tr>
+         <th>{{field.label}}</th>
+         <td>{{field}}</td>
+        </tr>
+        {%endfor%}
+      </table>
+    </form>
+    </body>
   
-  </body>
-  
-</html>
+    </html>
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Люди помогают людям </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/5ecd7d043c.js" crossorigin="anonymous"></script>
   </head>
   
   <body>
@@ -33,7 +34,7 @@
       </div>
     </nav>
 
-      <img src="{{url_for('static', filename="logo_rus.png")}}" style=" display: block; margin-left: auto;   margin-right: auto;">
+      <img src="{{url_for('static', filename='logo_rus.png')}}" style=" display: block; margin-left: auto;   margin-right: auto;">
 
       <section class="hero">
         <div class="hero-body">
@@ -47,75 +48,76 @@
 
     <section class="section">
     <div class="container">
-        <form  action="{{url_for('regsubmit')}}"  method="post" class="box">
+        <form  action="{{url_for('regsubmit')}}"  method="POST" enctype = "multipart/form-data"  class="box" >
+
+          <div class="field">
+            <label class="label">Фото </label>
+            <div class="control">
+              <input type="file" name="profile_photo" class="input"  >
+            </div>
+          </div>
+
+
             <div class="field">
               <label class="label">Категория</label>
               <div class="select">
-                <select name="category">
+                <select name="mode">
                   <option>Помощник</option>
                   <option>Нужна помощь</option>
                 </select>
               </div>
 
-              <div class="control">
-                <!--<input class="input" type="email" placeholder="текст">-->
-              </div>
-            </div>
+              
 
             <div class="field">
                 <label class="label">Имя</label>
                 <div class="control">
-                  <input name="q" class="input" type="text" placeholder="текст">
+                  <input name="first_name" class="input" type="text" placeholder="текст">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input name="email" class="input" type="email" placeholder="электронная почта">
                 </div>
               </div>
 
               <div class="field">
                 <label class="label">Город</label>
                 <div class="control">
-                  <input name="w" class="input" type="text" placeholder="текст">
+                  <input name="city" class="input" type="text" placeholder="текст">
                 </div>
               </div>
 
               <div class="field">
                 <label class="label">Дата рождения </label>
                 <div class="control">
-                  <input name="e" class="input" type="text" placeholder="текст">
+                  <input name="birth_date" class="input" type="date" placeholder="текст">
                 </div>
               </div>
           
-
-
+ 
+<!--add phone num,age, last name-->
               
-            <div class="field">
+           <!-- <div class="field">         LET THEM DO THAT IN THE POST FOR NOW 
                 <label class="label">Группа помощи </label>
-                <div class="select">
-                    <select name="category2">
-                      <option>Учеба</option>
-                      <option>Технические проблемы</option>
-                      <option>Право</option>
+                <div class="select is-multiple ">
+                    <select name="category2" multiple >    
+                      <option value="Учеба" >Учеба</option>
+                      <option value="Технические проблемы">Технические проблемы</option>
+                      <option value="Право">Право</option>
                     </select>
                   </div>
-            </div>
+            </div>-->
 
-                
-              <!--<label class="label">Группа помощи </label>
-              <div class="control">
-                <input class="input" type="password" placeholder="текст">
-              </div>-->
             
-         
+           
               <input type="submit" value="Подтвердить">
         
           </form>
     </div>
   </section>
-    
 
-
-            
-  
-  
-  
-  <p><a href="profile.html">page3</a></p>
   </body>
 </html>

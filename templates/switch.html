@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Люди помогают людям</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/5ecd7d043c.js" crossorigin="anonymous"></script>
   </head>
   
 
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <!--<a class="navbar-item" href=""> add link to the main page -->
-        <img src="{{url_for('static', filename="logo_rus.png")}}" height="200" width ="200" >
+        <img src="{{url_for('static', filename='logo_rus.png')}}" height="200" width ="200" >
       <!--</a> -->
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -92,7 +93,7 @@
               <div class="field">
                 <label class="label">Дата рождения </label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="текст">
+                  <input class="input" type="date" placeholder="текст">
                 </div>
               </div>
           

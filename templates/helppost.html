@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/5ecd7d043c.js" crossorigin="anonymous"></script>
   </head>
   <body>
+
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <!--<a class="navbar-item" href=""> add link to the main page -->
@@ -28,7 +29,7 @@
             </div>
           </div>
       
-         <!-- <div class="navbar-end">
+          <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
                 <a href="{{url_for('switch')}}" class="button is-grey  is-rounded ">
@@ -36,27 +37,38 @@
                 </a>
                
               </div>
-            </div>-->
+            </div>
           </div>
         </div>
       </nav>
+   </body>
 
-        <p> </p>
-      <body>
-        <div class="box"  style=" margin-left:25%; margin-top:15%; width:50%; text-align:Center; ">
-          
-       {%for n in data %} 
-        <ul>
-          <li>
-               {{n}}  </li>
-        </ul>
-        {% endfor%}
+ 
+   
+   <p> </p>
+   <body>
 
-        <img src='data:;base64,{{ photo }}' height='200' width='200'>
-        
-      </div>
 
-      <!-- <a href="{{url_for('member')}}"><button class="button is-green">К профайлу</button></a>   AGAIN, MEMEBR ID?-->
+     <div class="box"  style=" margin-left:25%; margin-top:15%; width:50%; text-align:Center; ">
+     {%for n in data %} 
+     <ul>
+       <li>
+            {{n}}  </li>
+     </ul>
+     {% endfor%}
 
-      </body>
-      </html>
+     <img src='data:;base64,{{ photo }}' height='200' width='200' > 
+
+   </div>
+   
+   </body>
+   </html>
+
+
+
+
+
+
+
+      
+
